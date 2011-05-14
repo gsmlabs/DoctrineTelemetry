@@ -1,9 +1,17 @@
 DoctrineTelemetry
 =================
 
-Mission: help to find issues within Doctrine
+Mission: Helps to debug issues when using Doctrine as an ORM
 
-Planned Features
-----------------
 
- - Help to find n+1 problems
+n+1 Issue Finding:
+------------------
+
+ - Detect lazy loading collections
+ - Detect after-query loaded 1:1 relations
+
+
+Queries:
+--------
+ - Detect duplicated queries
+ - Sum how many queries of which type (SELECT, UPDATE, DELETE, ...) where executed
