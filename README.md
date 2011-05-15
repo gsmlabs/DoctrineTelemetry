@@ -13,7 +13,7 @@ n+1 Issue Finding:
  - Detect after-query loaded 1:1 relations
 
 
-Queries:`
+Queries:
 --------
  - Detect duplicated queries
  - Sum how many queries of which type (SELECT, UPDATE, DELETE, ...) where executed
