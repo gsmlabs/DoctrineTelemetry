@@ -3,8 +3,7 @@ DoctrineTelemetry
 
 Mission: Helps to debug issues when using Doctrine as an ORM
 
-If you love minefields, just set `DoctrineTelemetry\Logger\TelemetryLogger` as your SQL logger by calling
-`Doctrine\ORM\Configuration::setSQLLogger()`
+If you love minefields, just set `DoctrineTelemetry\Logger\TelemetryLogger` as your SQL logger by calling `Doctrine\ORM\Configuration::setSQLLogger()`
 
 n+1 Issue Finding:
 ------------------
