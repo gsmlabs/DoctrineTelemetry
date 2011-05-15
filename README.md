@@ -15,3 +15,9 @@ Queries:
 --------
  - Detect duplicated queries
  - Sum how many queries of which type (SELECT, UPDATE, DELETE, ...) where executed
+
+
+TODOs:
+------
+ - Third-party logger support (Zend Framework, Symfony, some web console)
+ - Code, code, code
