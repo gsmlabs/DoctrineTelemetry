@@ -11,7 +11,7 @@ class LazyLoadingLogger implements SQLLogger
     {
         $this->_matcher = new \DoctrineTelemetry\Backtrace\Matcher\Matcher(
             array(
-             //new \DoctrineTelemetry\Backtrace\Query\LazyCollectionQuery(),
+             new \DoctrineTelemetry\Backtrace\Query\LazyCollectionQuery(),
              new \DoctrineTelemetry\Backtrace\Query\LazyOneToOneQuery(),
             )
         );
