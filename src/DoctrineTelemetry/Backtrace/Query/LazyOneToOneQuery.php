@@ -1,7 +1,7 @@
 <?php
 namespace DoctrineTelemetry\Backtrace\Query;
 
-class CollectionLoadingQuery extends AbstractBacktraceQuery
+class LazyOneToOneQuery extends AbstractBacktraceQuery
 {
     protected $_nextQuery;
 
@@ -13,23 +13,21 @@ class CollectionLoadingQuery extends AbstractBacktraceQuery
 
     public function matchObject($object)
     {
-        return $object instanceof \Doctrine\ORM\PersistentCollection;
+        return $object instanceof \Doctrine\ORM\Persisters\BasicEntityPersister;
     }
 
     public function matchFunction($function)
     {
-        return $function === 'initialize';
+        return $function === 'loadOneToOneEntity';
     }
 
     public function matchFound(array $line)
     {
-        parent::matchFound($line);
-        $this->_matchBuilder->setClassMapping($line['object']->getMapping());
+        $this->_matchBuilder->setClassMapping(reset($line['args']));
     }
 
     public function matchBack(array $line)
     {
-        parent::matchBack($line);
         $this->_matchBuilder->setOrigin($line);
     }
 
