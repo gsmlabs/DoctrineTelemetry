@@ -28,4 +28,9 @@ class QueryTypeLogger implements SQLLogger
     {
         return $this->_queryTypes;
     }
+
+    public function __destruct()
+    {
+        error_log(print_r($this->getQueryTypes(), 1));
+    }
 }

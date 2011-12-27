@@ -26,9 +26,4 @@ class TelemetryLogger implements SQLLogger
             $logger->stopQuery();
         }
     }
-
-    public function __destruct()
-    {
-        error_log(print_r($this->_loggers['queryType']->getQueryTypes(), 1));
-    }
 }
