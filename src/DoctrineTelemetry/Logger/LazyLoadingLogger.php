@@ -3,7 +3,7 @@ namespace DoctrineTelemetry\Logger;
 
 use Doctrine\DBAL\Logging\SQLLogger;
 
-class LazyLoadingLogger implements SQLLogger
+class LazyLoadingLogger extends AbstractLogger implements SQLLogger
 {
     protected $_matcher;
 
@@ -20,7 +20,7 @@ class LazyLoadingLogger implements SQLLogger
     public function startQuery($sql, array $params = null, array $types = null)
     {
         foreach ($this->_matcher->match(debug_backtrace()) as $match) {
-            error_log(self::formatMessage($match));
+            $this->dump(self::formatMessage($match));
         }
     }
 

@@ -3,7 +3,7 @@ namespace DoctrineTelemetry\Logger;
 
 use Doctrine\DBAL\Logging\SQLLogger;
 
-class QueryTypeLogger implements SQLLogger
+class QueryTypeLogger extends AbstractLogger implements SQLLogger
 {
     private $_queryTypes = array(
                             'SELECT' => 0,
@@ -31,6 +31,6 @@ class QueryTypeLogger implements SQLLogger
 
     public function __destruct()
     {
-        error_log(print_r($this->getQueryTypes(), 1));
+        $this->dump(print_r($this->getQueryTypes(), 1));
     }
 }
