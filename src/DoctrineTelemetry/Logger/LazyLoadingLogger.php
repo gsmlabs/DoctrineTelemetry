@@ -30,7 +30,7 @@ class LazyLoadingLogger implements SQLLogger
     protected static function formatMessage($match) {
         return (
             sprintf(
-                '%s:%d, %s%s%s(): Lazy loading detected of %s (from %s->%s)',
+                '%s:%d, %s%s%s(): Lazy loading detected of %s (from %s->%s)'.PHP_EOL,
                 $match->getOrigin('file'),
                 $match->getOrigin('line'),
                 $match->getOrigin('class'),
