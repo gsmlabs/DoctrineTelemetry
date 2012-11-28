@@ -1,0 +1,7 @@
+{
+    "name": "gsmlabs/DoctrineTelemetry",
+    "type": "library",
+    "autoload": {
+        "psr-0": { "DoctrineTelemetry\\": "src/" }
+    }
+}
